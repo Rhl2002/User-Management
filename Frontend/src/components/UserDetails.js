@@ -13,9 +13,7 @@ const UserDetails = () => {
       if (res.data.success === false) {
         navigate("/");
       } else {
-        console.log("res",res.data.data[0]);
         await setUser(res.data.data[0]);
-        console.log("user",user);
       }
     };
     fetchUser();
@@ -102,12 +100,10 @@ const UserDetails = () => {
     };
 
     const handleSave = async () => {
-        console.log("user",user);
       try {
         let res = await axios.put(`/api/users/${user._id}`, editedUser);
         
         // let res = await axios.put(`/api/users/${user._id}`, user); 
-        console.log("response", res.data);
         if (res.data.success === true) {
           setEditedUser(editedUser);
           setUser(editedUser);

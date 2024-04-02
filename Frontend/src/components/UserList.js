@@ -30,7 +30,7 @@ const UserList = ({ users }) => {
 
   // Function to handle team name change
   const handleTeam = (user) => {
-    const isUserAlreadyAdded = team.some(
+    const isUserAlreadyAdded = team?.some(
       (member) => member.domain === user.domain
     );
 
@@ -99,11 +99,11 @@ const UserList = ({ users }) => {
           )
         )}
       </div>
-      <TeamCreator
+      {/* <TeamCreator
         users={filteredUsers}
         currentPage={currentPage}
         usersPerPage={usersPerPage}
-      />
+      /> */}
     </>
   );
 };
