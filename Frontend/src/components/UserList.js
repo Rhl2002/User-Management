@@ -13,8 +13,14 @@ const UserList = ({ users }) => {
   useEffect(() => {
     const fetchTeam = () => {
       let storedTeam =  localStorage.getItem('team');
-      storedTeam = JSON.parse(storedTeam);
-      setTeam(storedTeam);
+      // console.log("team output",storedTeam)
+      if(storedTeam===null) {
+        localStorage.setItem('team',JSON.stringify(team));
+      }
+      else{
+        storedTeam = JSON.parse(storedTeam);
+        setTeam(storedTeam);
+      }
     };
     fetchTeam();
     setFilteredUsers(users); // Initialize filteredUsers with all users
