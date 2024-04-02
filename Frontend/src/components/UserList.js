@@ -71,13 +71,13 @@ const UserList = ({ users }) => {
               onClick={() => handleTeam(user)}
               className={`mt-2 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 ${
                 !user.available ||
-                team.some((member) => member.domain === user.domain)
+                team?.some((member) => member.domain === user.domain)
                   ? "opacity-50 cursor-not-allowed"
                   : ""
               }`}
               disabled={
                 !user.available ||
-                team.some((member) => member.domain === user.domain)
+                team?.some((member) => member.domain === user.domain)
               }
             >
               Create Team
