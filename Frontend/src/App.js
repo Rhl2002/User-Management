@@ -10,7 +10,8 @@ import TeamDetails from "./components/TeamDetails";
 // import ViewTeam from "./components/ViewTeam";
 
 function App() {
-  axios.defaults.baseURL = "http://localhost:8000";
+  // axios.defaults.baseURL = "http://localhost:8000";
+  axios.defaults.baseURL = process.env.REACT_APP_BACKEND_URL;
 
   return (
     <>
